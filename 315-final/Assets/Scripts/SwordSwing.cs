@@ -19,7 +19,7 @@ public class SwordSwing : MonoBehaviour
         this.transform.SetParent(parent);
         this.isPickedUp = true;
         
-        this.transform.localPosition = new Vector3(0.4f,0,0);
+        this.transform.localPosition = new Vector3(0.46f,0.25f,0.45f);
         this.transform.localEulerAngles = new Vector3(0, 90, 45);
     }
     

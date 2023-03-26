@@ -9,6 +9,7 @@ public class Duplicate : MonoBehaviour
     public static int count = 1;
     private IEnumerator coroutine;
     public GameObject sword;
+    public GameObject flashlight;
 
     void Start()
     {
@@ -22,9 +23,11 @@ public class Duplicate : MonoBehaviour
 
         //yield on a new YieldInstruction that waits for 5 seconds.
         if(Duplicate.count <= 700){
-            yield return new WaitForSeconds(6);
-            Vector3 newPosition = new Vector3(transform.position.x + Random.Range(-2f, 2f), transform.position.y, transform.position.z + Random.Range(-2f, 2f));
-            Instantiate(mummy, newPosition, transform.rotation);
+            yield return new WaitForSeconds(10);
+            Vector3 newPosition = new Vector3(transform.position.x + Random.Range(-1f, 1f), transform.position.y, transform.position.z + Random.Range(-2f, 2f));
+            Quaternion randomRotation = Random.rotation;
+            randomRotation.eulerAngles = new Vector3(0,Random.Range(0, 360f),0);
+            Instantiate(mummy, newPosition, randomRotation);
             Duplicate.count++;
             Debug.Log(Duplicate.count);
             coroutine = DuplicateCoroutine();
@@ -41,12 +44,14 @@ public class Duplicate : MonoBehaviour
         if(sword.GetComponent<SwordSwing>().isPickedUp){
             StopCoroutine(coroutine);
             Duplicate.count--;
+            Debug.Log(Duplicate.count);
 
             if(Duplicate.count == 0){
+                Instantiate(flashlight, transform.position, Random.rotation);
                 Destroy(this.gameObject);
             }
 
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }
