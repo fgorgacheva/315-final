@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class Duplicate : MonoBehaviour
 {
     public GameObject mummy;
-    public static int count = 1;
+    public static int count = 3;
     private IEnumerator coroutine;
     public GameObject sword;
     public GameObject flashlight;
+    public AudioSource pickUpSound;
 
     void Start()
     {
@@ -44,11 +45,13 @@ public class Duplicate : MonoBehaviour
         if(sword.GetComponent<SwordSwing>().isPickedUp){
             StopCoroutine(coroutine);
             Duplicate.count--;
-            Debug.Log(Duplicate.count);
 
             if(Duplicate.count == 0){
-                Instantiate(flashlight, transform.position, Random.rotation);
-                Destroy(this.gameObject);
+                flashlight.SetActive(true);
+                this.gameObject.SetActive(false);
+                if(pickUpSound != null){
+                    pickUpSound.PlayOneShot(pickUpSound.clip, 1);
+                }
             }
 
             Destroy(this.gameObject);

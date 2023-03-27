@@ -25,7 +25,7 @@ public class PickUp : MonoBehaviour
         //if scene name NOT specified, play regular pick up behaviour
         if(sceneName == ""){
             pickUpSound.PlayOneShot(pickUpSound.clip, 1);
-            this.gameObject.SetActive(false);
+            // this.gameObject.SetActive(false);
         }
 
         //if scene name is specified, play scene change behaviour
