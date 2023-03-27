@@ -8,11 +8,6 @@ public class SwordSwing : MonoBehaviour
     public bool isPickedUp = true;
     private Animator anim;
 
-    // public float localPositionX = 0.4f;
-    // public float localEulerAnglesY = 90;
-    // public float localEulerAnglesZ = 45;
-
-
     void Start(){
         this.anim = gameObject.GetComponent<Animator>();
 
@@ -37,8 +32,6 @@ public class SwordSwing : MonoBehaviour
     void OnMouseDown(){
 
         isPickedUp = true;       
-        
-        
-        
+           
     }
 }
