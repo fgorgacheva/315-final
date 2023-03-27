@@ -30,7 +30,6 @@ public class SwordSwing : MonoBehaviour
     }
 
     void OnMouseDown(){
-
         isPickedUp = true;       
            
     }
