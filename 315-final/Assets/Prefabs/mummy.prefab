@@ -37,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.38
+      value: -8.82
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -141,4 +141,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mummy: {fileID: 8224168522285892504}
   sword: {fileID: 0}
-  flashlight: {fileID: 4012483408874832116, guid: 6004cf6c95ca61743a60aadf66226a48, type: 3}
+  flashlight: {fileID: 0}
+  pickUpSound: {fileID: 0}

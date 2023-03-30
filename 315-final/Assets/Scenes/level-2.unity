@@ -364,8 +364,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f40ca2a34e4164a9c244f4452be761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinSpeed: 0
-  axis: 
+  spinSpeed: 70
+  axis: x
+--- !u!114 &590790079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590790069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b5153e6e5f814419ddc3a12c285572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpSound: {fileID: 928487011}
+  teleportSound: {fileID: 1284122865}
+  loadScreen: {fileID: 834615669}
+  isPickedUp: 0
+  sceneName: level-3
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -460,6 +478,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &834615669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6439902047631771348, guid: 76e4d0ce9854b294cad582fd2048ff68, type: 3}
@@ -718,7 +756,7 @@ PrefabInstance:
     - target: {fileID: 140228315, guid: b56e5f4e1a2aa2b4bb0ed6150303016c, type: 3}
       propertyPath: flashlight
       value: 
-      objectReference: {fileID: 4012483408874832116, guid: 6004cf6c95ca61743a60aadf66226a48, type: 3}
+      objectReference: {fileID: 590790069}
     - target: {fileID: 8224168522285801400, guid: b56e5f4e1a2aa2b4bb0ed6150303016c, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1478,7 +1516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4012483408874832116, guid: 6004cf6c95ca61743a60aadf66226a48, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4012483408875068628, guid: 6004cf6c95ca61743a60aadf66226a48, type: 3}
       propertyPath: m_RootOrder

@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PickUpSword : MonoBehaviour
+public class PickUpTPItem : MonoBehaviour
 {
 
     public AudioSource soundEffect;
     public GameObject loadScreen;
+    public string level;
 
     // this method will load the next scene
     void LoadNextScene(){
-        SceneManager.LoadScene("level-2", LoadSceneMode.Single);
+        SceneManager.LoadScene("level-"+level, LoadSceneMode.Single);
     }
 
     //click sword to pick it up

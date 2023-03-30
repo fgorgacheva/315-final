@@ -8,20 +8,32 @@ public class Duplicate : MonoBehaviour
     public GameObject mummy;
     public static int count = 3;
     private IEnumerator coroutine;
-    public GameObject sword;
-    public GameObject flashlight;
-    public AudioSource pickUpSound;
+    public static GameObject sword;
+    public static GameObject flashlight;
+    public static AudioSource pickUpSound;
 
     void Start()
     {
         //Start the coroutine we define below named ExampleCoroutine.
+        sword = GameObject.Find("sword");
+        if(flashlight == null){
+            flashlight = GameObject.Find("Flashlight");
+        } else{
+            flashlight.SetActive(false);
+        }
+
+        if(pickUpSound == null){
+           GameObject w = GameObject.Find("PickUpSound");
+           pickUpSound = w.GetComponent<AudioSource>();
+        }
+
         coroutine = DuplicateCoroutine();
         StartCoroutine(coroutine);
+        
     }
 
     IEnumerator DuplicateCoroutine()
     {
-
         //yield on a new YieldInstruction that waits for 5 seconds.
         if(Duplicate.count <= 700){
             yield return new WaitForSeconds(10);
