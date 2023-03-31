@@ -7,7 +7,8 @@ public class TurnOnLight : MonoBehaviour
 {
     public AudioSource click;
     public AudioSource deathSound;
-    public Material buttonClicked;
+    // public Material buttonClicked;
+    public GameObject switchOn;
     public GameObject directionalLight;
     public GameObject mimic;
     public Transform mimicPosition;
@@ -18,10 +19,12 @@ public class TurnOnLight : MonoBehaviour
     void OnMouseDown()
     {
         directionalLight.SetActive(true);
-        this.gameObject.GetComponent<MeshRenderer>().material = buttonClicked;
+        switchOn.SetActive(true);
+        // this.gameObject.GetComponent<MeshRenderer>().material = buttonClicked;
         click.PlayOneShot(click.clip, 1);
 
         Invoke("MonsterDeath", 2f);
+        this.gameObject.SetActive(false);
     }
 
 
