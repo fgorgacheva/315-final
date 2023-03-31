@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Duplicate : MonoBehaviour
 {
     public GameObject mummy;
-    public static int count = 3;
+    public static int count = 2;
     private IEnumerator coroutine;
     public static GameObject sword;
     public static GameObject flashlight;
