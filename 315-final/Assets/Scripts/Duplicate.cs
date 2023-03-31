@@ -37,7 +37,7 @@ public class Duplicate : MonoBehaviour
     {
         //yield on a new YieldInstruction that waits for 5 seconds.
         if(Duplicate.count <= 700){
-            yield return new WaitForSeconds(7);
+            yield return new WaitForSeconds(12);
             Vector3 newPosition = new Vector3(transform.position.x + Random.Range(-1f, 1f), transform.position.y, transform.position.z + Random.Range(-2f, 2f));
             Quaternion randomRotation = Random.rotation;
             randomRotation.eulerAngles = new Vector3(0,Random.Range(0, 360f),0);
