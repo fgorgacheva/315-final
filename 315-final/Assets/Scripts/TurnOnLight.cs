@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MimicSpace;
 
 public class TurnOnLight : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class TurnOnLight : MonoBehaviour
     public AudioSource deathSound;
     public Material buttonClicked;
     public GameObject directionalLight;
-    public GameObject monster;
+    public GameObject mimic;
+    public Transform mimicPosition;
     public GameObject particles;
 
 
@@ -16,17 +18,17 @@ public class TurnOnLight : MonoBehaviour
     void OnMouseDown()
     {
         directionalLight.SetActive(true);
-        this.gameObject.GetComponent<MeshRenderer> ().material = buttonClicked;
+        this.gameObject.GetComponent<MeshRenderer>().material = buttonClicked;
         click.PlayOneShot(click.clip, 1);
 
-        MonsterDeath();
+        Invoke("MonsterDeath", 2f);
     }
 
 
     void MonsterDeath(){
         deathSound.PlayOneShot(deathSound.clip, 1);
-        monster.SetActive(false); 
-        // particles.position = monster.position;
+        mimic.SetActive(false); 
+        particles.transform.position = mimicPosition.position;
         particles.SetActive(true);
     }
     //kill the monster slowly as it screenches

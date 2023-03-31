@@ -140,6 +140,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mummy: {fileID: 8224168522285892504}
-  sword: {fileID: 0}
-  flashlight: {fileID: 0}
-  pickUpSound: {fileID: 0}
+  deathScreen: {fileID: 5922672452794286370, guid: 764593b9fabf4e541a8afd14e46f5d2e, type: 3}

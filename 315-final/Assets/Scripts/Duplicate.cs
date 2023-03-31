@@ -11,6 +11,7 @@ public class Duplicate : MonoBehaviour
     public static GameObject sword;
     public static GameObject flashlight;
     public static AudioSource pickUpSound;
+    public GameObject deathScreen;
 
     void Start()
     {
@@ -36,7 +37,7 @@ public class Duplicate : MonoBehaviour
     {
         //yield on a new YieldInstruction that waits for 5 seconds.
         if(Duplicate.count <= 700){
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(7);
             Vector3 newPosition = new Vector3(transform.position.x + Random.Range(-1f, 1f), transform.position.y, transform.position.z + Random.Range(-2f, 2f));
             Quaternion randomRotation = Random.rotation;
             randomRotation.eulerAngles = new Vector3(0,Random.Range(0, 360f),0);
@@ -47,14 +48,18 @@ public class Duplicate : MonoBehaviour
             StartCoroutine(coroutine);
         }
 
-        if(Duplicate.count == 1000){
-           Destroy(this.gameObject);
+        if(Duplicate.count > 1000){
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            deathScreen.SetActive(true);
+            Destroy(sword);
+            Destroy(this.gameObject);
         }
         
     }
 
     void OnMouseDown(){
-        if(sword.GetComponent<SwordSwing>().isPickedUp){
+        if(sword && sword.GetComponent<SwordSwing>().isPickedUp){
             StopCoroutine(coroutine);
             Duplicate.count--;
 
