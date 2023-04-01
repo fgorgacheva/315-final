@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class Duplicate : MonoBehaviour
 {
     public GameObject mummy;
-    public static int count = 2;
+    public static int count = 3;
     private IEnumerator coroutine;
     public static GameObject sword;
     public static GameObject flashlight;
     public static AudioSource pickUpSound;
     public GameObject deathScreen;
+    // Vector3 mummyPos = this.gameObject.transform.position;
 
     void Start()
     {
@@ -19,8 +20,6 @@ public class Duplicate : MonoBehaviour
         sword = GameObject.Find("sword");
         if(flashlight == null){
             flashlight = GameObject.Find("Flashlight");
-        } else{
-            flashlight.SetActive(false);
         }
 
         if(pickUpSound == null){
@@ -63,8 +62,10 @@ public class Duplicate : MonoBehaviour
             StopCoroutine(coroutine);
             Duplicate.count--;
 
-            if(Duplicate.count == 0){
-                flashlight.SetActive(true);
+            if(Duplicate.count == 0 ){
+                // flashlight = GameObject.Find("Flashlight");
+                // flashlight.SetActive(true);
+                flashlight.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y + 1, this.gameObject.transform.position.z);
                 this.gameObject.SetActive(false);
                 if(pickUpSound != null){
                     pickUpSound.PlayOneShot(pickUpSound.clip, 1);

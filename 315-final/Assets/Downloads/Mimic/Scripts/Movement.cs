@@ -29,14 +29,14 @@ namespace MimicSpace
 
         void Update()
         {
-            if (this.GetComponent<BoxCollider>().bounds.Contains(transform.position))
-            {
-                Debug.Log("HI");    
-            }
-            else{
-                transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-                myMimic.velocity = player.position - transform.position;
-            }
+            // if (this.GetComponent<BoxCollider>().bounds.Contains(transform.position))
+            // {
+            //     Debug.Log("HI");    
+            // }
+            // else{
+            //     transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            //     myMimic.velocity = player.position - transform.position;
+            // }
         }
 
 
