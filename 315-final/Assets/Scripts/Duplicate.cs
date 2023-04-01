@@ -18,6 +18,7 @@ public class Duplicate : MonoBehaviour
     {
         //Start the coroutine we define below named ExampleCoroutine.
         sword = GameObject.Find("sword");
+        
         if(flashlight == null){
             flashlight = GameObject.Find("Flashlight");
         }
@@ -63,8 +64,6 @@ public class Duplicate : MonoBehaviour
             Duplicate.count--;
 
             if(Duplicate.count == 0 ){
-                // flashlight = GameObject.Find("Flashlight");
-                // flashlight.SetActive(true);
                 flashlight.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y + 1, this.gameObject.transform.position.z);
                 this.gameObject.SetActive(false);
                 if(pickUpSound != null){
