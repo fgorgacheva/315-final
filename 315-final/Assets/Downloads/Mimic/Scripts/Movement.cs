@@ -17,7 +17,6 @@ namespace MimicSpace
         [Range(0.5f, 5f)]
         public float speed = 0.5f;
         Mimic myMimic;
-        private bool isMoving = true;
 
 
         public Transform player;
@@ -30,8 +29,14 @@ namespace MimicSpace
 
         void Update()
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            myMimic.velocity = player.position - transform.position;
+            if (this.GetComponent<BoxCollider>().bounds.Contains(transform.position))
+            {
+                Debug.Log("HI");    
+            }
+            else{
+                transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+                myMimic.velocity = player.position - transform.position;
+            }
         }
 
 

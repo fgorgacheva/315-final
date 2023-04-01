@@ -11,7 +11,6 @@ public class TurnOnLight : MonoBehaviour
     public GameObject switchOn;
     public GameObject directionalLight;
     public GameObject mimic;
-    public Transform mimicPosition;
     public GameObject particles;
 
 
@@ -22,7 +21,6 @@ public class TurnOnLight : MonoBehaviour
         switchOn.SetActive(true);
         // this.gameObject.GetComponent<MeshRenderer>().material = buttonClicked;
         click.PlayOneShot(click.clip, 1);
-
         Invoke("MonsterDeath", 2f);
         this.gameObject.SetActive(false);
     }
@@ -31,7 +29,7 @@ public class TurnOnLight : MonoBehaviour
     void MonsterDeath(){
         deathSound.PlayOneShot(deathSound.clip, 1);
         mimic.SetActive(false); 
-        particles.transform.position = mimicPosition.position;
+        particles.transform.position = mimic.transform.position;
         particles.SetActive(true);
     }
     //kill the monster slowly as it screenches

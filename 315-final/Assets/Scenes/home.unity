@@ -3515,6 +3515,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5922672451792019146, guid: 862fb2fa38a11744a8608a03f1881a37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 316
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922672451792019149, guid: 862fb2fa38a11744a8608a03f1881a37, type: 3}
+      propertyPath: m_text
+      value: 'Darkening Clues
+
+        Differing Worlds'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922672451792019149, guid: 862fb2fa38a11744a8608a03f1881a37, type: 3}
+      propertyPath: m_margin.w
+      value: -277.7953
+      objectReference: {fileID: 0}
     - target: {fileID: 5922672452794286370, guid: 862fb2fa38a11744a8608a03f1881a37, type: 3}
       propertyPath: m_Name
       value: MenuCanvas
@@ -3618,6 +3632,10 @@ PrefabInstance:
     - target: {fileID: 5922672453494570108, guid: 862fb2fa38a11744a8608a03f1881a37, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: level-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922672453494570109, guid: 862fb2fa38a11744a8608a03f1881a37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -204
       objectReference: {fileID: 0}
     - target: {fileID: 6891669714609332760, guid: 862fb2fa38a11744a8608a03f1881a37, type: 3}
       propertyPath: m_IsActive
