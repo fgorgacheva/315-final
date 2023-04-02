@@ -10,6 +10,8 @@ public class ClickContinue : MonoBehaviour
     public GameObject message;
     private int clickCount = 0;
 
+    public GameObject mummies;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,8 @@ public class ClickContinue : MonoBehaviour
     void Update()
     {
         
-       if (Input.GetMouseButtonDown(0))
-       {
+        if (Input.GetMouseButtonDown(0))
+        {
             clickCount++;
             switch(clickCount) 
             {
@@ -29,9 +31,14 @@ public class ClickContinue : MonoBehaviour
                     this.gameObject.active = false;
                     blackScreen.active = false;
                     message.active = false;
+                    if(mummies != null && !mummies.active){
+                        mummies.active = true;
+                    }
                     break;
             }
-       }
+        }
+        
+
     }
 
 }
